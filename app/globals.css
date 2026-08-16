@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+/* ============================================================
+   スポーツ買取フィールド — Design System
+   「フィールドギア」: チャコール × セーフティオレンジ × グレージュ紙
+   見出し: Zen Kaku Gothic New ／ 本文: Noto Sans JP
+   ============================================================ */
+
+@theme inline {
+  --font-sans: var(--font-noto-sans-jp);
+  --font-head: var(--font-zen-kaku);
+
+  --color-ink: #26292b;
+  --color-ink-soft: #494e52;
+  --color-muted: #85898c;
+  --color-paper: #f3f1ec;
+  --color-paper-deep: #e9e6df;
+  --color-safety: #d9531e;
+  --color-safety-soft: #e8794b;
+  --color-safety-pale: #f8e8de;
+  --color-field: #4a5a3c;
+  --color-line: #dcd8cf;
+}
+
+body {
+  background:
+    linear-gradient(180deg, rgba(74, 90, 60, 0.04), transparent 400px),
+    #f3f1ec;
+  color: #26292b;
+  font-family: var(--font-noto-sans-jp), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .head {
+  font-family: var(--font-zen-kaku), var(--font-noto-sans-jp), sans-serif;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+}
+
+/* --- 装飾 --- */
+.rule-safety { position: relative; padding-bottom: 0.7rem; }
+.rule-safety::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 3.4rem; height: 3px;
+  background: #d9531e;
+}
+.eyebrow {
+  font-size: 0.72rem; letter-spacing: 0.26em; color: #d9531e; font-weight: 700;
+}
+.gear-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 1.5px solid #26292b; color: #26292b;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+  padding: 0.25rem 0.7rem; border-radius: 3px;
+}
+.gear-tag--safety { border-color: #d9531e; color: #d9531e; }
+
+/* --- Header / Footer --- */
+.site-header {
+  background: rgba(243, 241, 236, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid #26292b;
+}
+.nav-link { position: relative; transition: color .2s; font-weight: 500; }
+.nav-link::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -4px;
+  height: 2px; background: #d9531e;
+  transform: scaleX(0); transition: transform .25s ease;
+}
+.nav-link:hover { color: #d9531e; }
+.nav-link:hover::after { transform: scaleX(1); }
+.site-footer { background: #26292b; }
+.footer-link { font-size: 0.85rem; color: rgba(243, 241, 236, 0.66); transition: color .2s; }
+.footer-link:hover { color: #e8794b; }
+
+/* --- 部品 --- */
+.btn-safety {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: #d9531e; color: #f3f1ec;
+  font-weight: 700; font-size: 0.9rem; letter-spacing: 0.06em;
+  padding: 0.8rem 1.9rem; border-radius: 4px;
+  transition: background .2s, transform .15s;
+}
+.btn-safety:hover { background: #b8431a; transform: translateY(-1px); }
+.btn-outline {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: transparent; color: #26292b;
+  font-weight: 700; font-size: 0.9rem;
+  padding: 0.8rem 1.9rem; border: 1.5px solid #26292b; border-radius: 4px;
+  transition: background .2s, color .2s;
+}
+.btn-outline:hover { background: #26292b; color: #f3f1ec; }
+.card-field {
+  background: #ffffff; border: 1px solid #dcd8cf; border-radius: 6px;
+  transition: box-shadow .2s, transform .15s;
+}
+.card-field:hover { box-shadow: 0 8px 24px rgba(38, 41, 43, 0.09); transform: translateY(-2px); }
+.notice-law {
+  background: #f8e8de; border-left: 4px solid #d9531e; border-radius: 0 6px 6px 0;
+}
+.notice-info {
+  background: #eef0ea; border-left: 4px solid #4a5a3c; border-radius: 0 6px 6px 0;
+}
+.table-spec { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.table-spec th {
+  background: #26292b; color: #f3f1ec; font-weight: 700;
+  padding: 0.65rem 0.9rem; text-align: left; white-space: nowrap;
+}
+.table-spec td { padding: 0.65rem 0.9rem; border-bottom: 1px solid #dcd8cf; background: #fff; }
+.table-spec tr:nth-child(even) td { background: #faf9f6; }
+
+/* --- パンくず --- */
+.crumbs { font-size: 0.78rem; color: #85898c; }
+.crumbs a { color: #85898c; }
+.crumbs a:hover { color: #d9531e; }
+
+/* --- レスポンシブ補助 (Tailwind v4 lg:hidden未生成対策) --- */
+.only-mobile { display: block; }
+@media (min-width: 1024px) { .only-mobile { display: none; } }
