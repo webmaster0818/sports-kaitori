@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sports-kaitori-deploy.pages.dev/sitemap.xml
+Sitemap: https://sports-sell.com/sitemap.xml

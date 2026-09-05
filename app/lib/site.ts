@@ -1,5 +1,5 @@
 // サイト共通定数 — ドメイン確定時はここ1箇所を変更すれば全ページに反映される
-export const SITE_URL = "https://sports-kaitori-deploy.pages.dev"; // 開発環境URL(独自ドメイン確定後に差し替え)
+export const SITE_URL = "https://sports-sell.com"; // 本番ドメイン(2026-09-05紐づけ)
 export const SITE_NAME = "スポーツ買取フィールド";
 export const SITE_TAGLINE = "エアガン・釣具・バイクウェアの買取比較";
 export const OPERATOR = "株式会社MediaX";
