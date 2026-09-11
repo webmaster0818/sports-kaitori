@@ -198,6 +198,8 @@ export default function AirsoftLawPage() {
           </div>
           <div className="mt-10 flex flex-wrap gap-3">
             <a href="/airsoft/" className="btn-safety text-sm">エアガン買取ガイドに戻る</a>
+            <a href="/airsoft/disposal/" className="btn-outline text-sm">処分方法4つの比較</a>
+            <a href="/airsoft/junk/" className="btn-outline text-sm">ジャンク・改造品は売れる？</a>
             <a href="/hikaku/" className="btn-outline text-sm">買取業者の選び方を見る</a>
           </div>
         </div>

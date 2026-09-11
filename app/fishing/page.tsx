@@ -187,7 +187,7 @@ export default function FishingPage() {
             <a href="/airsoft/" className="font-bold text-safety underline">エアガン買取</a>
             ・
             <a href="/bikewear/" className="font-bold text-safety underline">バイクウェア買取</a>
-            のガイドへ。
+            のガイドへ。シマノ・ダイワなど5ブランドの<a href="/souba/" className="font-bold text-safety underline">実売相場データ</a>も公開しています。
           </p>
         </div>
       </section>

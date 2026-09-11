@@ -5,6 +5,7 @@ export default function Header() {
     { href: "/airsoft/", label: "エアガン買取" },
     { href: "/fishing/", label: "釣具買取" },
     { href: "/bikewear/", label: "バイクウェア買取" },
+    { href: "/souba/", label: "実売相場" },
     { href: "/hikaku/", label: "業者の選び方" },
     { href: "/guide/", label: "はじめての方へ" },
   ];

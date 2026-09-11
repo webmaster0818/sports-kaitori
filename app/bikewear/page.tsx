@@ -203,7 +203,7 @@ export default function BikewearPage() {
             <a href="/airsoft/" className="font-bold text-safety underline">エアガン買取</a>
             ・
             <a href="/fishing/" className="font-bold text-safety underline">釣具買取</a>
-            のガイドへ。
+            のガイドへ。クシタニ・SHOEIなど5ブランドの<a href="/souba/" className="font-bold text-safety underline">実売相場データ</a>も公開しています。
           </p>
         </div>
       </section>

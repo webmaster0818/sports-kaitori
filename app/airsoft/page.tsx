@@ -189,6 +189,9 @@ export default function AirsoftPage() {
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <a href="/hikaku/" className="btn-safety text-sm">買取業者の選び方を見る</a>
+            <a href="/souba/" className="btn-outline text-sm">実売相場データを見る</a>
+            <a href="/airsoft/disposal/" className="btn-outline text-sm">処分方法4つの比較</a>
+            <a href="/airsoft/junk/" className="btn-outline text-sm">ジャンク・改造品は売れる？</a>
             <a href="/guide/" className="btn-outline text-sm">はじめての方へ</a>
           </div>
         </div>
