@@ -193,6 +193,8 @@ export default function AirsoftPage() {
             <a href="/airsoft/disposal/" className="btn-outline text-sm">処分方法4つの比較</a>
             <a href="/airsoft/junk/" className="btn-outline text-sm">ジャンク・改造品は売れる？</a>
             <a href="/guide/" className="btn-outline text-sm">はじめての方へ</a>
+            <a href="/airsoft/model-gun/" className="btn-outline text-sm">モデルガンが買取できない条件</a>
+            <a href="/reviews/" className="btn-outline text-sm">総合リユース店の検証</a>
           </div>
         </div>
       </section>

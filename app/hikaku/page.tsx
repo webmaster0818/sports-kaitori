@@ -162,6 +162,7 @@ export default function HikakuPage() {
             <a href="/airsoft/" className="btn-outline text-sm">エアガン・トイガン</a>
             <a href="/fishing/" className="btn-outline text-sm">釣具</a>
             <a href="/bikewear/" className="btn-outline text-sm">バイクウェア</a>
+            <a href="/reviews/" className="btn-outline text-sm">総合リユース店の検証</a>
             <a href="/guide/" className="btn-safety text-sm">はじめての方へ</a>
           </div>
         </div>

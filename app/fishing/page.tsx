@@ -172,6 +172,8 @@ export default function FishingPage() {
           <div className="mt-6 flex flex-wrap gap-3">
             <a href="/guide/" className="btn-safety">はじめての買取ガイドを見る</a>
             <a href="/hikaku/" className="btn-outline">業者の選び方を見る</a>
+            <a href="/fishing/junk/" className="btn-outline text-sm">折れたロッド・箱なしリールの売却可否</a>
+            <a href="/reviews/" className="btn-outline text-sm">総合リユース店の検証</a>
           </div>
         </div>
       </section>

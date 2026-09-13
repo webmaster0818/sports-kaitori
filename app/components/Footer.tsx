@@ -9,12 +9,17 @@ export default function Footer() {
         { href: "/fishing/", label: "釣具・フィッシング用品買取" },
         { href: "/bikewear/", label: "バイクウェア・ヘルメット買取" },
         { href: "/airsoft/law/", label: "エアガンの法規制と買取可否" },
+        { href: "/airsoft/model-gun/", label: "モデルガンが買取できない条件" },
+        { href: "/fishing/junk/", label: "折れたロッド・箱なしリールの売却" },
+        { href: "/bikewear/helmet/", label: "中古ヘルメットの買取可否" },
+        { href: "/bikewear/suit/", label: "革ツナギの売却" },
       ],
     },
     {
       title: "業者選び・準備",
       links: [
         { href: "/hikaku/", label: "買取業者の選び方（3つの売り先）" },
+        { href: "/reviews/", label: "総合リユース店の検証" },
         { href: "/guide/", label: "はじめての買取ガイド" },
         { href: "/verification-policy/", label: "情報の調査・検証ポリシー" },
       ],

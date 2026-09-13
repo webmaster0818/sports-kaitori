@@ -7,6 +7,7 @@ export default function Header() {
     { href: "/bikewear/", label: "バイクウェア買取" },
     { href: "/souba/", label: "実売相場" },
     { href: "/hikaku/", label: "業者の選び方" },
+    { href: "/reviews/", label: "総合店の検証" },
     { href: "/guide/", label: "はじめての方へ" },
   ];
   return (

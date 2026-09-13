@@ -189,6 +189,9 @@ export default function BikewearPage() {
         <div className="mt-6 flex flex-wrap gap-3">
           <a href="/guide/" className="btn-safety">はじめての買取ガイドを見る</a>
           <a href="/hikaku/" className="btn-outline">業者の選び方を見る</a>
+            <a href="/bikewear/helmet/" className="btn-outline text-sm">中古ヘルメットの買取可否</a>
+            <a href="/bikewear/suit/" className="btn-outline text-sm">革ツナギの売却</a>
+            <a href="/reviews/" className="btn-outline text-sm">総合リユース店の検証</a>
         </div>
       </section>
 
