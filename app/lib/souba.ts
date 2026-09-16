@@ -19,6 +19,9 @@ export type SoubaBrand = {
   rows: SoubaRow[];
   fetchedAt: string;
   notes?: string; // 収集時の除外事情等
+  models?: SoubaRow[]; // 型番・モデル別の実売(P3・2026-09-16追補)
+  modelsIntro?: string; // 型番別データの読み方(実データから言えることのみ)
+  modelsFetchedAt?: string;
 };
 
 export const SILO_LABEL: Record<SoubaBrand["silo"], string> = {
@@ -42,6 +45,15 @@ export const SOUBA: SoubaBrand[] = [
     ],
     fetchedAt: "2026年9月11日",
     notes: "avgはaucfan検索結果ページに表示される「ページ内平均価格」(1ページ目集計値)。最高値の選定でPTW/システマ・INOKATSU等の他社製品名羅列出品、ジャンクまとめセット(175,450円)、他社製カスタム(ネモトガンワークス百式165,000円)、パーツ出品(V10パーツ214,000円)を除外。",
+    models: [
+      {category: "グロック17 Gen5", count: "28件(直近30日)", avg: "18,059円", max: "61,000円", maxNote: "ガスブローバック グロック17 Gen5 カスタム・付属品多数（中古・単品出品）。これを上回る落札はGHK製セットや他モデル（G26）のため除外。落札日2026年4月7日", aucfanUrl: "https://aucfan.com/intro/q-~c5ecb5fea5dea5eba5a420a5b0a5eda5c3a5af31372067656e35/", yahooUrl: "https://auctions.yahoo.co.jp/closedsearch/closedsearch/%E6%9D%B1%E4%BA%AC%E3%83%9E%E3%83%AB%E3%82%A4%20%E3%82%B0%E3%83%AD%E3%83%83%E3%82%AF17%20gen5/0/"},
+      {category: "P90", count: "202件(直近30日)", avg: "4,374円", max: "71,000円", maxNote: "P90TR 電磁弁カスタム（中古・単品出品）。これを上回る落札はS&T製AR57・KRYTAC製のため除外。落札日2026年5月30日", aucfanUrl: "https://aucfan.com/intro/q-~c5ecb5fea5dea5eba5a420503930/", yahooUrl: "https://auctions.yahoo.co.jp/closedsearch/closedsearch/%E6%9D%B1%E4%BA%AC%E3%83%9E%E3%83%AB%E3%82%A4%20P90/0/"},
+      {category: "AKM", count: "67件(直近30日)", avg: "24,279円", max: "150,000円", maxNote: "GBB AKM KREBS ASSNECK SBRカスタム（中古・単品出品）。これを上回る落札はE&L製限定モデルのため除外。落札日2026年8月19日", aucfanUrl: "https://aucfan.com/intro/q-~c5ecb5fea5dea5eba5a420414b4d/", yahooUrl: "https://auctions.yahoo.co.jp/closedsearch/closedsearch/%E6%9D%B1%E4%BA%AC%E3%83%9E%E3%83%AB%E3%82%A4%20AKM/0/"},
+      {category: "L96", count: "55件(直近30日)", avg: "8,474円", max: "48,900円", maxNote: "L96 AWS 店舗カスタム新品（KM企画0.9Jスプリング仕様・スコープ/バイポッド付き）。法定基準内の仕様表示があるもの。落札日2026年7月1日", aucfanUrl: "https://aucfan.com/intro/q-~c5ecb5fea5dea5eba5a4204c3936/", yahooUrl: "https://auctions.yahoo.co.jp/closedsearch/closedsearch/%E6%9D%B1%E4%BA%AC%E3%83%9E%E3%83%AB%E3%82%A4%20L96/0/"},
+      {category: "M40A5", count: "36件(直近30日)", avg: "8,626円", max: "45,000円", maxNote: "M40A5 ショートカスタム（中古・単品出品）。落札日2026年4月21日", aucfanUrl: "https://aucfan.com/intro/q-~c5ecb5fea5dea5eba5a4204d34304135/", yahooUrl: "https://auctions.yahoo.co.jp/closedsearch/closedsearch/%E6%9D%B1%E4%BA%AC%E3%83%9E%E3%83%AB%E3%82%A4%20M40A5/0/"},
+    ],
+    modelsFetchedAt: "2026年9月16日",
+    modelsIntro: "検索需要の多い5モデルを個別集計しました。グロック17 Gen5・AKM（GBB）はカスタム品が上限を作り、P90・L96・M40A5は本体1万円前後の流通が厚く平均は低めです。上位の落札にはGHK・E&L・S&Tなど他社製品がキーワード混入するため、出品タイトルで東京マルイ製と確認できる単品のみを最高値に採用しています。",
   },
   {
     slug: "vfc",
@@ -108,6 +120,13 @@ export const SOUBA: SoubaBrand[] = [
     ],
     fetchedAt: "2026年9月11日",
     notes: "件数・平均はaucfan検索結果ページ表示値(ヤフオク直近30日・平均は「ページ内平均価格」)。スピニングは上位4件(大量まとめ等)を除外。電動リールはバッテリー単体とセット売りを除外しリール単品最上位を採用。",
+    models: [
+      {category: "ステラ", count: "300件(直近90日)", avg: "42,248円", max: "162,800円", maxNote: "26ステラ SW20000PG（新品・単品出品）。これを上回る落札は複数モデル名を羅列した出品と2台セットのため除外。落札日2026年7月24日", aucfanUrl: "https://aucfan.com/intro/q-~a5b7a5dea5ce20a5b9a5c6a5e9/", yahooUrl: "https://auctions.yahoo.co.jp/closedsearch/closedsearch/%E3%82%B7%E3%83%9E%E3%83%8E%20%E3%82%B9%E3%83%86%E3%83%A9/0/"},
+      {category: "ヴァンフォード", count: "193件(直近90日)", avg: "13,642円", max: "28,600円", maxNote: "24ヴァンフォード C3000SDH（未使用・単品出品）。これを上回る落札は複数ブランド羅列・ロッドとのセットのため除外。落札日2026年8月6日", aucfanUrl: "https://aucfan.com/intro/q-~a5b7a5dea5ce20a5f4a5a1a5f3a5d5a5a9a1bca5c9/", yahooUrl: "https://auctions.yahoo.co.jp/closedsearch/closedsearch/%E3%82%B7%E3%83%9E%E3%83%8E%20%E3%83%B4%E3%82%A1%E3%83%B3%E3%83%95%E3%82%A9%E3%83%BC%E3%83%89/0/"},
+      {category: "ツインパワー", count: "635件(直近30日)", avg: "21,466円", max: "65,000円", maxNote: "ツインパワー SW10000PG（中古・単品出品）。落札一覧の上位はステラの出品にキーワードとして含まれるため除外して確認。落札日2026年5月25日", aucfanUrl: "https://aucfan.com/intro/q-~a5b7a5dea5ce20a5c4a5a4a5f3a5d1a5efa1bc/", yahooUrl: "https://auctions.yahoo.co.jp/closedsearch/closedsearch/%E3%82%B7%E3%83%9E%E3%83%8E%20%E3%83%84%E3%82%A4%E3%83%B3%E3%83%91%E3%83%AF%E3%83%BC/0/"},
+    ],
+    modelsFetchedAt: "2026年9月16日",
+    modelsIntro: "需要の大きい3機種を個別集計しました。ステラは26ステラSWの新品が16万円台、ヴァンフォードは24モデルの未使用が2万円台後半、ツインパワーはSWの大型番手が上限です。ヤフオク落札一覧では「ステラ」の出品タイトルに他機種名が羅列されるため、型番単位で確認できる単品のみを採用しています。",
   },
   {
     slug: "daiwa",
@@ -122,6 +141,13 @@ export const SOUBA: SoubaBrand[] = [
     ],
     fetchedAt: "2026年9月11日",
     notes: "件数・平均はaucfan表示値。ベイトはジャンクまとめとカテゴリ外混入を除外。スピニング最高値595,100円は未使用廃盤コレクター品の突出値(単品のためルール上採用)。",
+    models: [
+      {category: "セルテート", count: "338件(直近30日)", avg: "22,473円", max: "80,000円", maxNote: "SLP WORKS 24セルテート カスタムボディ LT2500-H（未使用・単品出品）。上位はソルティガ出品のキーワード混入のため除外。落札日2026年5月9日", aucfanUrl: "https://aucfan.com/intro/q-~a5c0a5a4a5ef20a5bba5eba5c6a1bca5c8/", yahooUrl: "https://auctions.yahoo.co.jp/closedsearch/closedsearch/%E3%83%80%E3%82%A4%E3%83%AF%20%E3%82%BB%E3%83%AB%E3%83%86%E3%83%BC%E3%83%88/0/"},
+      {category: "イグジスト", count: "210件(直近30日)", avg: "33,647円", max: "280,000円", maxNote: "ロデオクラフト×ダイワ RC 12イグジスト 2004 IOSフルチューン（中古・コラボ品）。通常モデルの上限とは限らない。落札日2026年8月25日", aucfanUrl: "https://aucfan.com/intro/q-~a5c0a5a4a5ef20a5a4a5b0a5b8a5b9a5c8/", yahooUrl: "https://auctions.yahoo.co.jp/closedsearch/closedsearch/%E3%83%80%E3%82%A4%E3%83%AF%20%E3%82%A4%E3%82%B0%E3%82%B8%E3%82%B9%E3%83%88/0/"},
+      {category: "ルビアス", count: "300件(直近90日)", avg: "15,620円", max: "51,000円", maxNote: "ルビアス エアリティ FC LT2500S-XH（新品・単品出品）。上位は複数モデル羅列・イグジスト出品のため除外。落札日2026年3月22日", aucfanUrl: "https://aucfan.com/intro/q-~a5c0a5a4a5ef20a5eba5d3a5a2a5b9/", yahooUrl: "https://auctions.yahoo.co.jp/closedsearch/closedsearch/%E3%83%80%E3%82%A4%E3%83%AF%20%E3%83%AB%E3%83%93%E3%82%A2%E3%82%B9/0/"},
+    ],
+    modelsFetchedAt: "2026年9月16日",
+    modelsIntro: "需要の大きい3機種を個別集計しました。イグジストはコラボ・周年限定品が上限を作り、通常モデルとは相場が別です。セルテートの落札一覧はソルティガ出品のキーワード混入が多く、型番でセルテートと確認できる単品のみを採用しています。ルビアスはエアリティFCの新品・未使用が5万円前後で上限です。",
   },
   {
     slug: "gamakatsu",
