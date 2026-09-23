@@ -104,6 +104,13 @@ export default async function SoubaBrandPage({
             </tbody>
           </table>
         </div>
+        {b.reading && b.reading.length > 0 && (
+          <ul className="mt-5 max-w-3xl space-y-2">
+            {b.reading.map((t) => (
+              <li key={t} className="flex items-baseline gap-3 text-sm leading-relaxed text-ink-soft"><span className="text-safety text-[0.7rem] shrink-0">◆</span><span>{t}</span></li>
+            ))}
+          </ul>
+        )}
         {b.notes && <p className="mt-4 text-xs text-muted">補足: {b.notes}</p>}
       </section>
 
