@@ -171,6 +171,14 @@ export default async function SoubaBrandPage({
             <a href="/hikaku/" className="btn-outline text-sm">買取業者の選び方</a>
             <a href="/souba/" className="btn-outline text-sm">相場データ一覧へ戻る</a>
           </div>
+          <h3 className="mt-10 text-base font-bold text-ink">{SILO_LABEL[b.silo]}の他ブランドの実売相場</h3>
+          <ul className="mt-4 flex flex-wrap gap-3">
+            {SOUBA.filter((x) => x.silo === b.silo && x.slug !== b.slug).map((x) => (
+              <li key={x.slug}>
+                <a href={`/souba/${x.slug}/`} className="btn-outline text-sm">{x.name}</a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </main>

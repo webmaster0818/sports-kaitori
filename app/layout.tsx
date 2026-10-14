@@ -3,6 +3,7 @@ import { Noto_Sans_JP, Zen_Kaku_Gothic_New } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import SiteJsonLd from "./components/SiteJsonLd";
 import { SITE_URL, SITE_NAME, SITE_TAGLINE } from "./lib/site";
 
 const notoSansJP = Noto_Sans_JP({
@@ -38,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${notoSansJP.variable} ${zenKaku.variable} antialiased`}>
+        <SiteJsonLd />
         <Header />
         <p className="bg-paper-deep border-b border-line text-center text-[11px] text-muted py-1 px-4">
           本サイトはプロモーション（PR）を含みます。

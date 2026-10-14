@@ -237,6 +237,14 @@ export default async function ReviewDetailPage({
             <a href="/hikaku/" className="btn-outline text-sm">3つの売り先の違い</a>
             <a href="/souba/" className="btn-outline text-sm">実売相場データ</a>
           </div>
+          <h3 className="mt-10 text-base font-bold text-ink">他の総合リユース店の検証</h3>
+          <ul className="mt-4 flex flex-wrap gap-3">
+            {REVIEWS.filter((x) => x.slug !== r.slug).map((x) => (
+              <li key={x.slug}>
+                <a href={`/reviews/${x.slug}/`} className="btn-outline text-sm">{x.name}</a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </main>
