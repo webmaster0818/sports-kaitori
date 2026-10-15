@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "../../lib/site";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import AuctionTable from "../../components/AuctionTable";
 
 export const metadata: Metadata = {
-  title: "ジャンク・故障エアガンは売れる？— 動作不良品の売却可否と改造品の注意",
+  title: "ジャンク・故障エアガンは売れる？落札実測データで見る相場と売却可否",
   description:
-    "動かないエアガン・ジャンク品の売却可否を整理。中古市場のパーツ取り需要、査定に出す前の準備、値が付きにくいケース、威力を高める改造品(準空気銃のおそれ)が売れない理由を解説します。",
+    "動かないエアガン・ジャンク品の売却可否を整理。「ジャンク」表記の落札実測（東京マルイ456件・平均8,054円／単品最高71,000円など・出典つき）で相場の目安を示し、査定前の準備、値が付きにくいケース、威力を高める改造品(準空気銃のおそれ)が売れない理由を解説します。",
   alternates: { canonical: `${SITE_URL}/airsoft/junk/` },
 };
 
@@ -102,6 +103,8 @@ export default function AirsoftJunkPage() {
           </div>
         </div>
       </section>
+
+      <AuctionTable setKey="airsoft-junk" />
 
       <section className="border-y border-line bg-paper-deep">
         <div className="mx-auto max-w-6xl px-5 py-12 md:py-14">

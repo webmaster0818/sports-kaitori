@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "../../lib/site";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import AuctionTable from "../../components/AuctionTable";
 
 export const metadata: Metadata = {
-  title: "折れたロッド・箱なしリールは売れる？— 釣具の売却可否と減額要因",
+  title: "折れたロッド・箱なしリールは売れる？落札実測データと減額要因",
   description:
-    "折れた釣り竿(ロッド)、箱や保証書のないリール、古いルアーやタックルの売却可否を整理。値が付くケース・付きにくいケース、査定前の準備、パーツ取り需要の考え方を解説します。",
+    "折れた釣り竿(ロッド)、箱や保証書のないリールの売却可否を整理。「ジャンク」表記の落札実測（シマノ195件・平均8,916円、ダイワ259件・平均7,328円・出典つき）で相場の目安を示し、値が付くケース・付きにくいケース、査定前の準備を解説します。",
   alternates: { canonical: `${SITE_URL}/fishing/junk/` },
 };
 
@@ -174,6 +175,8 @@ export default function FishingJunkPage() {
         </div>
         <p className="mt-3 text-[0.8rem] text-muted">出典: 各社公式サイトのFAQ・買取案内ページ（当サイト確認日2026年9月13日）。内容は変更される場合があります。</p>
       </section>
+
+      <AuctionTable setKey="fishing-junk" />
 
       <section className="border-y border-line bg-paper-deep">
         <div className="mx-auto max-w-6xl px-5 py-12 md:py-14">

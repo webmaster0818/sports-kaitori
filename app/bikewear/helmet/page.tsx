@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "../../lib/site";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import AuctionTable from "../../components/AuctionTable";
 
 export const metadata: Metadata = {
-  title: "中古ヘルメットは売れる？— 製造年・使用年数・傷で変わる買取可否",
+  title: "中古ヘルメットは売れる？製造年別の落札実測データと買取可否",
   description:
-    "バイク用ヘルメットの売却可否を整理。メーカーが案内する交換目安、製造年の確認方法、傷・内装の状態、規格表示など査定で見られる点と、買取対象外になりやすいケースを解説します。",
+    "バイク用ヘルメットの売却可否を整理。SHOEI・Araiの製造年別の落札実測（SHOEIは2024年製平均34,302円→2020年製20,069円・出典つき）で年式による価格差を示し、メーカーが案内する交換目安、傷・内装の状態、買取対象外になりやすいケースを解説します。",
   alternates: { canonical: `${SITE_URL}/bikewear/helmet/` },
 };
 
@@ -155,6 +156,8 @@ export default function HelmetPage() {
           </div>
         </div>
       </section>
+
+      <AuctionTable setKey="helmet-year" />
 
       <section className="mx-auto max-w-6xl px-5 py-12 md:py-14">
         <h2 className="head rule-safety text-2xl text-ink">相場の物差しを持ってから査定へ</h2>

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "../../lib/site";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import AuctionTable from "../../components/AuctionTable";
 
 export const metadata: Metadata = {
-  title: "モデルガンが買取できない条件 — 金属製・模造拳銃の規制と売却可否",
+  title: "モデルガンが買取できない条件と落札実測データ — 金属製・模造拳銃の規制",
   description:
-    "モデルガンの売却可否を整理。金属製モデルガンに関する銃刀法の規制(模造拳銃・模擬銃器)、規制対応の目印、買取対象外になりやすいケース、査定前の確認事項を一次情報に基づいて解説します。",
+    "モデルガンの売却可否を整理。金属製モデルガンに関する銃刀法の規制(模造拳銃・模擬銃器)と規制対応の目印、買取対象外になりやすいケースを一次情報に基づいて解説し、メーカー別の落札実測（金属製125件・平均19,515円／マルシン・タナカ・コクサイ・出典つき）で相場の目安を示します。",
   alternates: { canonical: `${SITE_URL}/airsoft/model-gun/` },
 };
 
@@ -136,6 +137,8 @@ export default function ModelGunPage() {
           で確認できます。
         </p>
       </section>
+
+      <AuctionTable setKey="model-gun" />
 
       <section className="border-t border-line bg-paper-deep">
         <div className="mx-auto max-w-6xl px-5 py-12 md:py-14">
