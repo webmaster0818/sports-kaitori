@@ -3,13 +3,17 @@ import { SITE_URL } from "../../lib/site";
 import Breadcrumbs from "../../components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "エアガンの法規制と買取可否 — 準空気銃とは",
+  title: "エアガンの規制はいつから？準空気銃とは・買取できるかの判断",
   description:
     "エアガンを売る前に確認したい法規制の基礎。銃砲刀剣類所持等取締法が定める「準空気銃」は所持自体が禁止されており、買取に出せません。判断に迷う場合の考え方と相談先をFAQつきで解説します。",
   alternates: { canonical: `${SITE_URL}/airsoft/law/` },
 };
 
 const faqs = [
+  {
+    q: "エアガンの規制はいつからですか？",
+    a: "準空気銃の所持禁止は、2006年（平成18年）8月21日に施行された改正銃砲刀剣類所持等取締法から始まりました。兵庫県警察のQ&Aでは、弾の運動エネルギーが3.5J（ジュール）/cm²を超えるエアソフトガンが「準空気銃」として所持禁止になったと案内されています。",
+  },
   {
     q: "普通に市販されているエアガンは買取に出せますか？",
     a: "はい。法令の範囲内で製造・販売されている通常の適法なエアガンやトイガンは、所持も売却も可能で、買取の対象になります。買取に出せないのは、威力が法定の基準値以上となる「準空気銃」にあたるおそれのある個体です。",
@@ -71,12 +75,35 @@ export default function AirsoftLawPage() {
           />
           <p className="eyebrow mt-8 mb-4">AIRSOFT — LAW</p>
           <h1 className="head text-3xl md:text-4xl leading-snug text-ink">
-            エアガンの法規制と買取可否
+            エアガンの法規制はいつから？買取可否と準空気銃
           </h1>
           <p className="mt-5 max-w-2xl text-[0.95rem] leading-loose text-ink-soft">
             エアガンには銃砲刀剣類所持等取締法による規制があります。結論から言うと、通常の適法なエアガンは買取可能ですが、
             威力が法定の基準値以上となる「準空気銃」は所持自体が禁止されており、買取に出すことができません。
             このページでは、条文にもとづく規制の内容と、判断に迷ったときの対処を整理します。
+          </p>
+        </div>
+      </section>
+
+      {/* いつから */}
+      <section className="mx-auto max-w-6xl px-5 pt-12">
+        <div className="card-field border-safety max-w-3xl p-6">
+          <p className="head text-lg text-ink">規制はいつから？</p>
+          <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+            <strong className="text-ink">2006年（平成18年）8月21日</strong>施行の改正銃砲刀剣類所持等取締法で、威力の強いエアソフトガンが「準空気銃」と定められ、所持が禁止されました。
+            基準は弾の運動エネルギーで、<strong className="text-ink">3.5J（ジュール）/cm²</strong>を超えるものが対象と案内されています。それ以前に買ったエアガンでも、基準を超えていれば所持できません。
+          </p>
+          <p className="mt-3 text-xs text-muted">
+            出典:{" "}
+            <a
+              href="https://www.police.pref.hyogo.lg.jp/qanda/5kyoninka/index10.htm"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-safety underline"
+            >
+              兵庫県警察「エアソフトガンの威力が強いように思うが、どうすればよいですか。」
+            </a>
+            （2026年10月15日確認）
           </p>
         </div>
       </section>
