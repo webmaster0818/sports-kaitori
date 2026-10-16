@@ -13,7 +13,7 @@ const silos = [
     href: "/airsoft/",
     tag: "AIRSOFT",
     title: "エアガン・トイガン買取",
-    body: "東京マルイなど国内外メーカーのエアガン・電動ガン・モデルガン。威力が法定値を超える個体（準空気銃）は所持自体が禁止されており買取対象になりません。売る前に必ず法規制の確認を。",
+    body: "東京マルイなど国内外メーカーのエアガン・電動ガン・モデルガン。威力が法定値を超える個体（準空気銃）は所持自体が禁止されており買取対象になりません。売却前に、法規制への該当有無をご確認ください。",
     sub: { href: "/airsoft/law/", label: "エアガンの法規制と買取可否" },
   },
   {
@@ -40,13 +40,13 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
           <p className="eyebrow mb-4">SPORTS &amp; OUTDOOR GEAR</p>
           <h1 className="head text-3xl md:text-5xl leading-tight text-ink max-w-3xl">
-            使わなくなったギアを、
+            公式情報にもとづく、
             <br />
-            公式情報にもとづく買取ガイド
+            スポーツ・アウトドア用品の買取ガイド
           </h1>
           <p className="mt-6 max-w-2xl text-[0.95rem] leading-relaxed text-ink-soft">
             {SITE_NAME}は、エアガン・釣具・バイクウェアの買取を専門に扱う比較ガイドです。
-            掲載する業者情報は公式サイトで確認した内容のみを確認日を記載して掲載し、広告報酬の有無は評価に影響させません。
+            掲載する業者情報は、公式サイトで確認した内容のみを、確認日を明記して掲載しています。広告報酬の有無は評価に影響させません。
             法規制があるジャンル（エアガン）は、買取対象外となる品目についても明記します。
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -100,7 +100,7 @@ export default function HomePage() {
 
       {/* 3つの売り先 */}
       <section className="mx-auto max-w-6xl px-5 pb-14">
-        <h2 className="head rule-safety text-2xl text-ink">売り先は大きく3つ</h2>
+        <h2 className="head rule-safety text-2xl text-ink">主な売却先の種類</h2>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ink-soft">
           スポーツ・アウトドア用品の売却先は「ジャンル専門の買取業者」「複数社への一括査定」「実店舗のリユースチェーン」の3タイプに分かれます。
           それぞれ得意な品物と手間が異なるため、1社に限定せず、タイプの違いを把握したうえで選ぶことをおすすめします。
@@ -115,7 +115,7 @@ export default function HomePage() {
         <div className="notice-info p-6">
           <p className="text-sm leading-relaxed text-ink-soft">
             <span className="font-bold text-ink">当サイトの方針: </span>
-            掲載する業者・相場の情報は、公式サイトなどの一次情報で確認できた内容のみを確認日を記載して掲載します。広告（PR）を含みますが、報酬の有無は評価・掲載順に影響しません。
+            掲載する業者・相場の情報は、公式サイトなどの一次情報で確認できた内容のみを、確認日を明記して掲載しています。広告（PR）を含みますが、報酬の有無は評価・掲載順に影響しません。
             詳しくは<a href="/verification-policy/" className="font-bold text-safety underline">情報の調査・検証ポリシー</a>をご覧ください。
           </p>
         </div>

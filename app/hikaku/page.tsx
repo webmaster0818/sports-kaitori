@@ -64,7 +64,7 @@ export default function HikakuPage() {
           <Breadcrumbs items={[{ label: "買取業者の選び方" }]} />
           <p className="eyebrow mt-8 mb-4">HOW TO CHOOSE</p>
           <h1 className="head text-3xl md:text-4xl leading-snug text-ink">
-            買取業者の選び方 — 売り先は大きく3つ
+            買取業者の選び方 — 主な売却先の種類
           </h1>
           <p className="mt-5 max-w-2xl text-[0.95rem] leading-loose text-ink-soft">
             エアガン・釣具・バイクウェアなどの売り先は、「ジャンル専門の買取業者」「複数社への一括査定」「実店舗のリユースチェーン」の3タイプに分かれます。
@@ -144,7 +144,7 @@ export default function HikakuPage() {
         <div className="notice-law mt-8 max-w-3xl p-6">
           <p className="head text-base text-ink">当サイトの業者別ページは現在整備中です</p>
           <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-            当サイトでは、掲載する業者の情報を公式サイトなどの一次情報で確認したうえで、確認日を記載して掲載する方針です。
+            当サイトでは、掲載する業者の情報を公式サイトなどの一次情報で確認したうえで、確認日を明記して掲載する方針です。
             確認が完了していない段階で具体的な業者名を並べることはしません。業者別の詳細ページは、確認が済み次第このページから案内します。
             方針の詳細は<a href="/verification-policy/" className="font-bold text-safety underline">情報の調査・検証ポリシー</a>をご覧ください。
           </p>
