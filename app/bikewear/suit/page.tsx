@@ -115,7 +115,7 @@ export default function SuitPage() {
         <div className="mx-auto max-w-6xl px-5 py-12 md:py-14">
         <h2 className="head rule-safety text-2xl text-ink">相場の物差しを持ってから査定へ</h2>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ink-soft">
-          当サイトでは、クシタニ・アルパインスターズ・ダイネーゼの実売相場（オークション落札の件数・平均・最高値・出典つき）を公開しています。出典ページで同じモデル・近いサイズの落札例を確認すると、査定額の妥当性を判断しやすくなります。
+          当サイトでは、クシタニ・アルパインスターズ・ダイネーゼの実売相場（オークション落札の件数・平均・最高値・出典を併記）を公開しています。出典ページで同じモデル・近いサイズの落札例を確認すると、査定額の妥当性を判断しやすくなります。
         </p>
         <div className="mt-6 flex flex-wrap gap-4">
           <a href="/souba/kushitani/" className="btn-outline text-sm">クシタニの実売相場</a>

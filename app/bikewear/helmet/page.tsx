@@ -6,7 +6,7 @@ import AuctionTable from "../../components/AuctionTable";
 export const metadata: Metadata = {
   title: "中古ヘルメットは売れる？製造年別の落札実測データと買取可否",
   description:
-    "バイク用ヘルメットの売却可否を整理。SHOEI・Araiの製造年別の落札実測（SHOEIは2024年製平均34,302円→2020年製20,069円・出典つき）で年式による価格差を示し、メーカーが案内する交換目安、傷・内装の状態、買取対象外になりやすいケースを解説します。",
+    "バイク用ヘルメットの売却可否を整理。SHOEI・Araiの製造年別の落札実測（SHOEIは2024年製平均34,302円→2020年製20,069円・出典を併記）で年式による価格差を示し、メーカーが案内する交換目安、傷・内装の状態、買取対象外になりやすいケースを解説します。",
   alternates: { canonical: `${SITE_URL}/bikewear/helmet/` },
 };
 
@@ -162,7 +162,7 @@ export default function HelmetPage() {
       <section className="mx-auto max-w-6xl px-5 py-12 md:py-14">
         <h2 className="head rule-safety text-2xl text-ink">相場の物差しを持ってから査定へ</h2>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ink-soft">
-          当サイトでは、SHOEI・Araiの実売相場（オークション落札の件数・平均・最高値・出典つき）を公開しています。廃番モデルのコレクター需要による高値は別枠で注記していますので、通常の中古相場と分けてご覧ください。
+          当サイトでは、SHOEI・Araiの実売相場（オークション落札の件数・平均・最高値・出典を併記）を公開しています。廃番モデルのコレクター需要による高値は別枠で注記していますので、通常の中古相場と分けてご覧ください。
         </p>
         <div className="mt-6 flex flex-wrap gap-4">
           <a href="/souba/shoei/" className="btn-outline text-sm">SHOEIの実売相場</a>

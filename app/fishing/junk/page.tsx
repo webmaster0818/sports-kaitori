@@ -6,7 +6,7 @@ import AuctionTable from "../../components/AuctionTable";
 export const metadata: Metadata = {
   title: "折れたロッド・箱なしリールは売れる？落札実測データと減額要因",
   description:
-    "折れた釣り竿(ロッド)、箱や保証書のないリールの売却可否を整理。「ジャンク」表記の落札実測（シマノ195件・平均8,916円、ダイワ259件・平均7,328円・出典つき）で相場の目安を示し、値が付くケース・付きにくいケース、査定前の準備を解説します。",
+    "折れた釣り竿(ロッド)、箱や保証書のないリールの売却可否を整理。「ジャンク」表記の落札実測（シマノ195件・平均8,916円、ダイワ259件・平均7,328円・出典を併記）で相場の目安を示し、値が付くケース・付きにくいケース、査定前の準備を解説します。",
   alternates: { canonical: `${SITE_URL}/fishing/junk/` },
 };
 
@@ -182,7 +182,7 @@ export default function FishingJunkPage() {
         <div className="mx-auto max-w-6xl px-5 py-12 md:py-14">
         <h2 className="head rule-safety text-2xl text-ink">相場の物差しを持ってから査定へ</h2>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ink-soft">
-          当サイトでは、シマノ・ダイワ・がまかつ・アブガルシア・メガバスの実売相場（オークション落札の件数・平均・最高値・出典つき）を公開しています。出典ページで「箱なし」「ジャンク」と書かれた落札例まで確認すると、状態別の価格差を実際の取引で把握できます。
+          当サイトでは、シマノ・ダイワ・がまかつ・アブガルシア・メガバスの実売相場（オークション落札の件数・平均・最高値・出典を併記）を公開しています。出典ページで「箱なし」「ジャンク」と書かれた落札例まで確認すると、状態別の価格差を実際の取引で把握できます。
         </p>
         <div className="mt-6 flex flex-wrap gap-4">
           <a href="/souba/shimano/" className="btn-outline text-sm">シマノの実売相場</a>

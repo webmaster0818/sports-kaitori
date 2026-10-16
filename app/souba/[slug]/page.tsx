@@ -18,7 +18,7 @@ export async function generateMetadata({
   if (!b) return {};
   return {
     title: `${b.name}の実売相場データ｜買取価格の目安【2026年9月】`,
-    description: `${b.name}の中古品がオークションで実際に売買された価格を集計。カテゴリ別${b.models ? "・型番別" : ""}の落札件数・平均落札価格・最高値を出典つきで公開し、買取価格の目安になる相場の物差しを提供します。`,
+    description: `${b.name}の中古品がオークションで実際に売買された価格を集計。カテゴリ別${b.models ? "・型番別" : ""}の落札件数・平均落札価格・最高値を出典とともに公開し、買取価格の目安になる相場の物差しを提供します。`,
     alternates: { canonical: `${SITE_URL}/souba/${b.slug}/` },
   };
 }
