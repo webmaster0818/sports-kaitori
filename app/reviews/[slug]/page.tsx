@@ -19,7 +19,7 @@ export async function generateMetadata({
   const ym = r.confirmedAt.replace(/(\d+年\d+月).*/, "$1");
   return {
     title: `${r.name}でエアガン・釣具・バイク用品は売れる？公式情報で検証【${ym}確認】`,
-    description: `${r.name}(${r.company})がエアガン・釣具・バイクウェアを買取対象としているか、買取方法・費用・古物商許可を公式サイトで一次確認して整理。確認できなかった項目も正直に記載します。架空の口コミは掲載しません。`,
+    description: `${r.name}(${r.company})がエアガン・釣具・バイクウェアを買取対象としているか、買取方法・費用・古物商許可を公式サイトで一次確認して整理。確認できなかった項目はその旨を記載します。架空の口コミは掲載しません。`,
     alternates: { canonical: `${SITE_URL}/reviews/${r.slug}/` },
   };
 }
@@ -58,7 +58,7 @@ export default async function ReviewDetailPage({
             {r.name}でエアガン・釣具・バイク用品は売れる？
           </h1>
           <p className="mt-5 max-w-2xl text-[0.95rem] leading-loose text-ink-soft">
-            このページの情報は、{r.name}の公式サイトを当サイトが直接確認して整理したものです（確認日: {r.confirmedAt}）。伝聞や口コミサイトからの引用はしていません。「買取対象と公式に明記されているか」をジャンル別に切り分け、確認できなかった項目は正直に記載します。
+            このページの情報は、{r.name}の公式サイトを当サイトが直接確認して整理したものです（確認日: {r.confirmedAt}）。伝聞や口コミサイトからの引用はしていません。「買取対象と公式に明記されているか」をジャンル別に切り分け、確認できなかった項目はその旨を記載します。
           </p>
         </div>
       </section>

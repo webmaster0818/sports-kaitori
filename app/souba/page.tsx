@@ -6,7 +6,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "実売相場データ一覧 — エアガン・釣具・バイクウェアの売買成立価格",
   description:
-    "エアガン・釣具・バイクウェアの主要ブランドについて、オークションで実際に売買が成立した価格を集計して公開。業者の「参考買取価格」ではなく実売データを、出典と取得日つきで確認できます。",
+    "エアガン・釣具・バイクウェアの主要ブランドについて、オークションで実際に売買が成立した価格を集計して公開。業者の「参考買取価格」ではなく実売データを、出典と取得日を併記して確認できます。",
   alternates: { canonical: `${SITE_URL}/souba/` },
 };
 

@@ -4,7 +4,7 @@ import { SITE_URL, SITE_NAME, SITE_TAGLINE } from "./lib/site";
 export const metadata: Metadata = {
   title: `${SITE_NAME}｜${SITE_TAGLINE}`,
   description:
-    "エアガン・釣具・バイクウェアの買取業者を公式確認情報で正直に比較。準空気銃など法規制の注意点、ジャンル別の売り方、高く売る準備までまとめた専門買取ガイドです。",
+    "エアガン・釣具・バイクウェアの買取業者を公式サイトの記載にもとづいて比較。準空気銃など法規制の注意点、ジャンル別の売り方、高く売る準備までまとめた専門買取ガイドです。",
   alternates: { canonical: `${SITE_URL}/` },
 };
 
@@ -42,12 +42,12 @@ export default function HomePage() {
           <h1 className="head text-3xl md:text-5xl leading-tight text-ink max-w-3xl">
             使わなくなったギアを、
             <br />
-            正直な情報で、正しく売る。
+            公式情報にもとづく買取ガイド
           </h1>
           <p className="mt-6 max-w-2xl text-[0.95rem] leading-relaxed text-ink-soft">
             {SITE_NAME}は、エアガン・釣具・バイクウェアの買取を専門に扱う比較ガイドです。
-            掲載する業者情報は公式サイトで確認した内容のみを確認日つきで掲載し、広告報酬の有無は評価に影響させません。
-            法規制があるジャンル（エアガン）は、売れないものを売れないと明記します。
+            掲載する業者情報は公式サイトで確認した内容のみを確認日を記載して掲載し、広告報酬の有無は評価に影響させません。
+            法規制があるジャンル（エアガン）は、買取対象外となる品目についても明記します。
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="/hikaku/" className="btn-safety">業者の選び方を見る</a>
@@ -103,7 +103,7 @@ export default function HomePage() {
         <h2 className="head rule-safety text-2xl text-ink">売り先は大きく3つ</h2>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ink-soft">
           スポーツ・アウトドア用品の売却先は「ジャンル専門の買取業者」「複数社への一括査定」「実店舗のリユースチェーン」の3タイプに分かれます。
-          それぞれ得意な品物と手間が異なるため、1社に決め打ちせず、タイプの違いを知ってから選ぶのが失敗しないコツです。
+          それぞれ得意な品物と手間が異なるため、1社に限定せず、タイプの違いを把握したうえで選ぶことをおすすめします。
         </p>
         <div className="mt-6">
           <a href="/hikaku/" className="btn-outline text-sm">3タイプの違いを詳しく見る</a>
@@ -115,7 +115,7 @@ export default function HomePage() {
         <div className="notice-info p-6">
           <p className="text-sm leading-relaxed text-ink-soft">
             <span className="font-bold text-ink">当サイトの方針: </span>
-            掲載する業者・相場の情報は、公式サイトなどの一次情報で確認できた内容のみを確認日つきで掲載します。広告（PR）を含みますが、報酬の有無は評価・掲載順に影響しません。
+            掲載する業者・相場の情報は、公式サイトなどの一次情報で確認できた内容のみを確認日を記載して掲載します。広告（PR）を含みますが、報酬の有無は評価・掲載順に影響しません。
             詳しくは<a href="/verification-policy/" className="font-bold text-safety underline">情報の調査・検証ポリシー</a>をご覧ください。
           </p>
         </div>

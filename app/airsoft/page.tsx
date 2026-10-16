@@ -185,7 +185,7 @@ export default function AirsoftPage() {
         <div className="card-field p-6 md:p-8">
           <h2 className="head text-xl text-ink">次に読む</h2>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-ink-soft">
-            売り先は「ジャンル専門業者」「一括査定」「実店舗リユースチェーン」の3タイプに分かれます。1社に決め打ちせず、タイプの違いを知ってから相見積もりを取るのが失敗しないコツです。
+            売り先は「ジャンル専門業者」「一括査定」「実店舗リユースチェーン」の3タイプに分かれます。1社に限定せず、タイプの違いを把握したうえで相見積もりを取ることをおすすめします。
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <a href="/hikaku/" className="btn-safety text-sm">買取業者の選び方を見る</a>

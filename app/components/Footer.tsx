@@ -41,7 +41,7 @@ export default function Footer() {
           <div>
             <p className="head text-lg text-paper">{SITE_NAME}</p>
             <p className="mt-3 text-xs leading-relaxed text-paper/60">
-              エアガン・釣具・バイクウェアの買取を、公式確認情報にもとづいて正直に比較する専門ガイドです。掲載情報には確認日を付記しています。
+              エアガン・釣具・バイクウェアの買取を、公式サイトの記載にもとづいて比較する専門ガイドです。掲載情報には確認日を付記しています。
             </p>
           </div>
           {cols.map((c) => (

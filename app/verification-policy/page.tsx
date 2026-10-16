@@ -4,7 +4,7 @@ import { SITE_URL, SITE_NAME, OPERATOR } from "../lib/site";
 
 export const metadata: Metadata = {
   title: "情報の調査・検証ポリシー",
-  description: `${SITE_NAME}が業者情報・法規制情報・相場データ・広告をどう扱っているかを公開します。業者情報は公式サイト等の一次情報のみ確認日つきで掲載し、法規制ジャンルは売れないものを売れないと明記。広告報酬は評価・掲載順に影響しません。`,
+  description: `${SITE_NAME}が業者情報・法規制情報・相場データ・広告をどう扱っているかを公開します。業者情報は公式サイト等の一次情報のみ確認日を記載して掲載し、法規制があるジャンルでは買取対象外の品目も明記。広告報酬は評価・掲載順に影響しません。`,
   alternates: { canonical: `${SITE_URL}/verification-policy/` },
 };
 

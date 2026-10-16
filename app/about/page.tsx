@@ -92,7 +92,7 @@ export default function AboutPage() {
               <span className="text-safety font-bold shrink-0">◆</span>
               <span>
                 <strong className="text-ink">架空の口コミ・体験談ゼロ：</strong>
-                架空の口コミや体験談は一切作成しません。実在するソースが確認できない場合は「口コミが少ない」と正直に記載します。
+                架空の口コミや体験談は一切作成しません。実在するソースが確認できない場合は「口コミが少ない」と記載します。
               </span>
             </li>
           </ul>
