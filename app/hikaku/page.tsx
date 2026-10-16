@@ -31,7 +31,7 @@ const types = [
     name: "複数社への一括査定",
     how: "1回の申し込みで複数の買取業者から査定の連絡を受けられる仕組みです。自分で1社ずつ探して依頼する手間を省けます。",
     fit: "相場感がなく、まず複数の提示額を並べて比べたい人に向きます。相見積もりを前提にした売り方と相性の良いタイプです。",
-    care: "複数社から連絡が来るため、やり取りの量は増えます。参加している業者の顔ぶれや条件は仕組みごとに異なるので、申し込み前に確認しましょう。",
+    care: "複数社から連絡が来るため、やり取りの量は増えます。参加している業者の顔ぶれや条件は仕組みごとに異なるので、申し込み前にご確認ください。",
   },
   {
     tag: "TYPE 03",
@@ -138,7 +138,7 @@ export default function HikakuPage() {
           <p>
             その場での即決を求められても、比較が終わるまで返事を保留して構いません。査定は金額の提示であり、納得できなければ断れます。
             また、エアガンのように法規制のあるジャンルは、査定に出す前に
-            <a href="/airsoft/law/" className="font-bold text-safety underline">売れるもの・売れないものの確認</a>を済ませておきましょう。
+            <a href="/airsoft/law/" className="font-bold text-safety underline">売れるもの・売れないものの確認</a>を済ませておいてください。
           </p>
         </div>
         <div className="notice-law mt-8 max-w-3xl p-6">
@@ -156,7 +156,7 @@ export default function HikakuPage() {
         <div className="card-field p-6 md:p-8">
           <h2 className="head text-xl text-ink">ジャンル別の売り方を確認する</h2>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-ink-soft">
-            売り先のタイプを決めたら、ジャンルごとの準備と注意点を確認してから査定に進みましょう。
+            売り先のタイプを決めたら、ジャンルごとの準備と注意点を確認してから査定に進んでください。
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <a href="/airsoft/" className="btn-outline text-sm">エアガン・トイガン</a>
