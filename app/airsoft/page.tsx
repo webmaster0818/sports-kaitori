@@ -115,7 +115,7 @@ export default function AirsoftPage() {
             準空気銃は原則として所持自体が禁止されているため、買取に出すことはできません。改造の有無や購入経緯に不安がある場合は、先に法規制ページを確認してください。
           </p>
           <a href="/airsoft/law/" className="btn-safety mt-5 text-sm">
-            エアガンの法規制と買取可否を確認する
+            エアガンの規制はいつから？準空気銃と買取可否を確認する
           </a>
         </div>
       </section>

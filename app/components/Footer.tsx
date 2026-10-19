@@ -8,7 +8,7 @@ export default function Footer() {
         { href: "/airsoft/", label: "エアガン・トイガン買取" },
         { href: "/fishing/", label: "釣具・フィッシング用品買取" },
         { href: "/bikewear/", label: "バイクウェア・ヘルメット買取" },
-        { href: "/airsoft/law/", label: "エアガンの法規制と買取可否" },
+        { href: "/airsoft/law/", label: "エアガンの規制はいつから・準空気銃とは" },
         { href: "/airsoft/model-gun/", label: "モデルガンが買取できない条件" },
         { href: "/fishing/junk/", label: "折れたロッド・箱なしリールの売却" },
         { href: "/bikewear/helmet/", label: "中古ヘルメットの買取可否" },
