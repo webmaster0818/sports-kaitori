@@ -88,7 +88,7 @@ export default function AirsoftLawPage() {
       {/* いつから */}
       <section className="mx-auto max-w-6xl px-5 pt-12">
         <div className="card-field border-safety max-w-3xl p-6">
-          <p className="head text-lg text-ink">規制はいつから？</p>
+          <h2 className="head text-lg text-ink">エアガンの規制はいつから？ — 2006年8月21日から</h2>
           <p className="mt-3 text-sm leading-relaxed text-ink-soft">
             <strong className="text-ink">2006年（平成18年）8月21日</strong>施行の改正銃砲刀剣類所持等取締法で、威力の強いエアソフトガンが「準空気銃」と定められ、所持が禁止されました。
             基準は弾の運動エネルギーで、<strong className="text-ink">3.5J（ジュール）/cm²</strong>を超えるものが対象と案内されています。それ以前に買ったエアガンでも、基準を超えていれば所持できません。
