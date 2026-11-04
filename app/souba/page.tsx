@@ -12,6 +12,27 @@ export const metadata: Metadata = {
 
 const SILOS = ["airsoft", "fishing", "bikewear"] as const;
 
+// 円表記の金額を数値に("141,000円"→141000)。取れない値は null
+function yen(v: string): number | null {
+  const m = v.replace(/,/g, "").match(/(\d+)円/);
+  return m ? Number(m[1]) : null;
+}
+// 件数表記の先頭の数値("2,013件(直近30日)"→2013)
+function cnt(v: string): number {
+  const m = v.replace(/,/g, "").match(/(\d+)件/);
+  return m ? Number(m[1]) : 0;
+}
+// ブランドごとの要約(各ブランドページのカテゴリ別データからそのまま算出)
+function summarize(b: (typeof SOUBA)[number]) {
+  const top = [...b.rows].sort((x, y) => cnt(y.count) - cnt(x.count))[0];
+  let maxRow: (typeof b.rows)[number] | null = null;
+  for (const r of b.rows) {
+    const v = yen(r.max);
+    if (v !== null && (maxRow === null || v > (yen(maxRow.max) ?? 0))) maxRow = r;
+  }
+  return { top, maxRow };
+}
+
 export default function SoubaHubPage() {
   return (
     <main>
@@ -24,6 +45,41 @@ export default function SoubaHubPage() {
             業者の広告に載る「参考買取価格」ではなく、オークションで実際に売買が成立した価格だけを集計しています。全データに出典と取得日を明記。査定に出す前の「相場の物差し」としてお使いください。
           </p>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 pt-10 md:pt-12">
+        <h2 className="head rule-safety text-2xl text-ink mb-4">ブランド別の実売データ早見表（全{SOUBA.length}ブランド）</h2>
+        <p className="max-w-3xl text-sm leading-relaxed text-ink-soft mb-5">
+          各ブランドページのカテゴリ別データから、落札件数が最も多いカテゴリの平均落札価格と、単品の最高落札価格を抜き出しています（バイクウェアの一部は件数が集計ページ内の件数のため、同数の場合は先頭のカテゴリを表示しています）。まとめ売り・ジャンク・パーツ出品は除外済みです。最高落札価格は1件の値で、SHOEI・アライのジェットのように廃番品のコレクター需要で突出した値も含みます。落札価格は売買が成立した価格で、買取査定額ではありません。
+        </p>
+        {SILOS.map((silo) => (
+          <div key={silo} className="mb-8 overflow-x-auto">
+            <table className="w-full min-w-[640px] text-sm border border-line">
+              <caption className="text-left font-bold text-ink py-2">{SILO_LABEL[silo]}</caption>
+              <thead className="bg-paper-deep">
+                <tr>
+                  <th className="p-2 text-left border-b border-line">ブランド</th>
+                  <th className="p-2 text-left border-b border-line">落札件数の多いカテゴリ（件数・平均）</th>
+                  <th className="p-2 text-left border-b border-line">単品の最高落札価格</th>
+                  <th className="p-2 text-left border-b border-line">取得日</th>
+                </tr>
+              </thead>
+              <tbody>
+                {SOUBA.filter((b) => b.silo === silo).map((b) => {
+                  const { top, maxRow } = summarize(b);
+                  return (
+                    <tr key={b.slug} className="border-b border-line">
+                      <td className="p-2"><a href={`/souba/${b.slug}/`} className="underline">{b.name}</a></td>
+                      <td className="p-2">{top.category}：{top.count}・平均{top.avg}</td>
+                      <td className="p-2">{maxRow ? `${maxRow.max}（${maxRow.category}）` : "—"}</td>
+                      <td className="p-2 whitespace-nowrap">{b.fetchedAt}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        ))}
       </section>
 
       {SILOS.map((silo) => {
