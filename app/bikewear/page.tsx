@@ -158,7 +158,7 @@ export default function BikewearPage() {
 
         <h2 className="head rule-safety text-2xl text-ink mt-12">総合リユース店の公式サイトでの扱い</h2>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ink-soft">
-          当サイトで検証した総合リユース店{REVIEWS.length}社について、公式サイトにバイクウェア・ヘルメットの買取がどう書かれているかを、各社の検証ページの記載からそのまま載せています。「明記なし」は公式サイトで確認できなかったという意味で、買取できないという意味ではありません（買取不可と明記されている場合はその旨を記載しています）。
+          当サイトが公式サイトで確認した総合リユース店{REVIEWS.length}社について、公式サイトにバイクウェア・ヘルメットの買取がどう書かれているかを、各社の検証ページの記載からそのまま載せています。「明記なし」は公式サイトで確認できなかったという意味で、買取できないという意味ではありません（買取不可と明記されている場合はその旨を記載しています）。
         </p>
         <div className="mt-5 overflow-x-auto">
           <table className="w-full min-w-[640px] text-sm border border-line">
