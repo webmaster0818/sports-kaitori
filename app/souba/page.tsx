@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "../lib/site";
-import { SOUBA, SILO_LABEL } from "../lib/souba";
+import { SOUBA, SILO_LABEL, summarize } from "../lib/souba";
 import Breadcrumbs from "../components/Breadcrumbs";
 
 export const metadata: Metadata = {
@@ -11,27 +11,6 @@ export const metadata: Metadata = {
 };
 
 const SILOS = ["airsoft", "fishing", "bikewear"] as const;
-
-// 円表記の金額を数値に("141,000円"→141000)。取れない値は null
-function yen(v: string): number | null {
-  const m = v.replace(/,/g, "").match(/(\d+)円/);
-  return m ? Number(m[1]) : null;
-}
-// 件数表記の先頭の数値("2,013件(直近30日)"→2013)
-function cnt(v: string): number {
-  const m = v.replace(/,/g, "").match(/(\d+)件/);
-  return m ? Number(m[1]) : 0;
-}
-// ブランドごとの要約(各ブランドページのカテゴリ別データからそのまま算出)
-function summarize(b: (typeof SOUBA)[number]) {
-  const top = [...b.rows].sort((x, y) => cnt(y.count) - cnt(x.count))[0];
-  let maxRow: (typeof b.rows)[number] | null = null;
-  for (const r of b.rows) {
-    const v = yen(r.max);
-    if (v !== null && (maxRow === null || v > (yen(maxRow.max) ?? 0))) maxRow = r;
-  }
-  return { top, maxRow };
-}
 
 export default function SoubaHubPage() {
   return (

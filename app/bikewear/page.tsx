@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { SITE_URL, SITE_NAME } from "../lib/site";
 import Breadcrumbs from "../components/Breadcrumbs";
+import { SOUBA, summarize } from "../lib/souba";
+import { REVIEWS } from "../lib/reviews";
 
 export const metadata: Metadata = {
   title: "バイクウェア・ヘルメット買取ガイド",
   description:
-    "レザージャケット・レーシングスーツ・ヘルメットなどバイク用品の買取ガイド。サイズ表記・年式・規格表示・使用感といった査定ポイント、ヘルメット特有の注意点、売る前の準備を一般論で整理します。",
+    "レザージャケット・レーシングスーツ・ヘルメットなどバイク用品の買取ガイド。サイズ表記・年式・規格表示・使用感といった査定ポイント、ヘルメット特有の注意点、売る前の準備に加え、主要10ブランドの落札実績（出典・取得日つき）と、総合リユース店の公式サイトでのバイクウェア・ヘルメットの扱いをまとめています。",
   alternates: { canonical: `${SITE_URL}/bikewear/` },
 };
 
@@ -88,6 +90,17 @@ const preps = [
   },
 ];
 
+const bikeBrands = SOUBA.filter((b) => b.silo === "bikewear");
+// 公式に「オートバイ用ヘルメットは買取不可」と明記している店舗(検証ページの checkBefore の記載で判定)
+function helmetNg(r: (typeof REVIEWS)[number]) {
+  return /(オートバイ用|バイク用)ヘルメットは(公式に)?買取(不可|対象外)/.test(r.checkBefore);
+}
+
+// 「記載のないカテゴリーは買取不可」と公式に明記している店舗
+function unlistedNg(r: (typeof REVIEWS)[number]) {
+  return r.unconfirmed.some((u) => u.includes("バイクウェア") && u.includes("記載のないカテゴリーは買取不可"));
+}
+
 export default function BikewearPage() {
   return (
     <main>
@@ -105,8 +118,67 @@ export default function BikewearPage() {
             バイクウェア・ヘルメットの買取ガイド
           </h1>
           <p className="mt-5 max-w-2xl text-[0.95rem] leading-loose text-ink-soft">
-            レザージャケットやレーシングスーツ、ヘルメットは、サイズ・年式・状態で査定が決まりやすいジャンルです。このページでは、売れるものの種類、査定で見られるポイント、ヘルメット特有の注意点、売る前の準備を一般論として整理します。
+            レザージャケットやレーシングスーツ、ヘルメットは、サイズ・年式・状態で査定が決まりやすいジャンルです。このページでは、売れるものの種類、査定で見られるポイント、ヘルメット特有の注意点、売る前の準備に加えて、主要ブランドの落札実績と、総合リユース店の公式サイトに書かれているバイクウェア・ヘルメットの扱いを冒頭でまとめています。
           </p>
+        </div>
+      </section>
+
+
+      {/* 実データ: 落札実績と業者の扱い */}
+      <section className="mx-auto max-w-6xl px-5 pt-12">
+        <h2 className="head rule-safety text-2xl text-ink">主要ブランドの落札実績（バイクウェア・ヘルメット{bikeBrands.length}ブランド）</h2>
+        <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ink-soft">
+          各ブランドの実売相場ページのデータから、落札件数が最も多いカテゴリの平均落札価格と、単品の最高落札価格を抜き出しています。落札価格はオークションで売買が成立した価格で、買取査定額ではありません。最高落札価格は1件の値で、廃番品のコレクター需要で突出した値も含みます。
+        </p>
+        <div className="mt-5 overflow-x-auto">
+          <table className="w-full min-w-[640px] text-sm border border-line">
+            <thead className="bg-paper-deep">
+              <tr>
+                <th className="p-2 text-left border-b border-line">ブランド</th>
+                <th className="p-2 text-left border-b border-line">落札件数の多いカテゴリ（件数・平均）</th>
+                <th className="p-2 text-left border-b border-line">単品の最高落札価格</th>
+                <th className="p-2 text-left border-b border-line">取得日</th>
+              </tr>
+            </thead>
+            <tbody>
+              {bikeBrands.map((b) => {
+                const { top, maxRow } = summarize(b);
+                return (
+                  <tr key={b.slug} className="border-b border-line">
+                    <td className="p-2"><a href={`/souba/${b.slug}/`} className="underline">{b.name}</a></td>
+                    <td className="p-2">{top.category}：{top.count}・平均{top.avg}</td>
+                    <td className="p-2">{maxRow ? `${maxRow.max}（${maxRow.category}）` : "—"}</td>
+                    <td className="p-2 whitespace-nowrap">{b.fetchedAt}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+
+        <h2 className="head rule-safety text-2xl text-ink mt-12">総合リユース店の公式サイトでの扱い</h2>
+        <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ink-soft">
+          当サイトで検証した総合リユース店{REVIEWS.length}社について、公式サイトにバイクウェア・ヘルメットの買取がどう書かれているかを、各社の検証ページの記載からそのまま載せています。「明記なし」は公式サイトで確認できなかったという意味で、買取できないという意味ではありません（買取不可と明記されている場合はその旨を記載しています）。
+        </p>
+        <div className="mt-5 overflow-x-auto">
+          <table className="w-full min-w-[640px] text-sm border border-line">
+            <thead className="bg-paper-deep">
+              <tr>
+                <th className="p-2 text-left border-b border-line">店舗</th>
+                <th className="p-2 text-left border-b border-line">バイクウェア・ヘルメットの公式記載</th>
+                <th className="p-2 text-left border-b border-line">確認日</th>
+              </tr>
+            </thead>
+            <tbody>
+              {REVIEWS.map((r) => (
+                <tr key={r.slug} className="border-b border-line align-top">
+                  <td className="p-2 whitespace-nowrap"><a href={`/reviews/${r.slug}/`} className="underline">{r.name}</a></td>
+                  <td className="p-2">{r.silos.bikewear ?? (helmetNg(r) ? "オートバイ用ヘルメットは買取不可と明記。ウェアの買取対象は明記なし" : unlistedNg(r) ? "買取対象カテゴリーに記載なし（公式は「記載のないカテゴリー商品」を買取不可としています）" : "明記なし")}</td>
+                  <td className="p-2 whitespace-nowrap">{r.confirmedAt}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </section>
 

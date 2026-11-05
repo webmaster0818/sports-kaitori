@@ -510,3 +510,25 @@ export const SOUBA: SoubaBrand[] = [
     notes: "件数・平均はaucfan検索結果ページ表示値(ヤフオク直近30日または90日・平均は「ページ内平均価格」)。最高値はヤフオク落札一覧から、まとめ売り・他ブランド製品・タイトル末尾のブランド名羅列出品・ジャンク・パーツのみを除外した単品出品を採用。",
   },
 ];
+
+// 円表記の金額を数値に("141,000円"→141000)。取れない値は null
+export function soubaYen(v: string): number | null {
+  const m = v.replace(/,/g, "").match(/(\d+)円/);
+  return m ? Number(m[1]) : null;
+}
+// 件数表記の先頭の数値("2,013件(直近30日)"→2013)
+function soubaCnt(v: string): number {
+  const m = v.replace(/,/g, "").match(/(\d+)件/);
+  return m ? Number(m[1]) : 0;
+}
+// ブランドごとの要約(各ブランドページのカテゴリ別データからそのまま算出)
+export function summarize(b: SoubaBrand) {
+  const top = [...b.rows].sort((x, y) => soubaCnt(y.count) - soubaCnt(x.count))[0];
+  let maxRow: (typeof b.rows)[number] | null = null;
+  for (const r of b.rows) {
+    const v = soubaYen(r.max);
+    if (v !== null && (maxRow === null || v > (soubaYen(maxRow.max) ?? 0))) maxRow = r;
+  }
+  return { top, maxRow };
+}
+
