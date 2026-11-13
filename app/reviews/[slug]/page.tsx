@@ -63,6 +63,20 @@ export default async function ReviewDetailPage({
         </div>
       </section>
 
+      {r.quickAnswer && r.quickAnswer.length > 0 && (
+        <section className="mx-auto max-w-6xl px-5 pt-12">
+          <div className="card-field p-6 max-w-4xl">
+            <h2 className="head text-xl text-ink">{r.name}で売れるもの・売れないもの（要点）</h2>
+            <ul className="mt-4 list-disc pl-5 space-y-2 text-sm leading-relaxed text-ink-soft">
+              {r.quickAnswer.map((q) => (
+                <li key={q}>{q}</li>
+              ))}
+            </ul>
+            <p className="mt-3 text-[0.8rem] text-muted">公式サイトの記載をもとに整理（確認日: {r.confirmedAt}）。詳細と原文は以下の各項目を参照してください。</p>
+          </div>
+        </section>
+      )}
+
       {/* ジャンル別の取扱 */}
       <section className="mx-auto max-w-6xl px-5 py-12 md:py-14">
         <h2 className="head rule-safety text-2xl text-ink">ジャンル別 — 公式サイトでの買取対象の明記</h2>
