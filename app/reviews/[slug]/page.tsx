@@ -83,14 +83,15 @@ export default async function ReviewDetailPage({
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           {SILO_KEYS.map((k) => {
             const v = r.silos[k];
+            const note = !v ? r.siloNotes?.[k] : undefined;
             return (
               <div key={k} className={v ? "card-field p-6" : "card-field p-6 opacity-80"}>
                 <span className={v ? "gear-tag mb-4" : "gear-tag gear-tag--safety mb-4"}>
-                  {v ? "公式に明記あり" : "明記を確認できず"}
+                  {v ? "公式に明記あり" : note ? "買取不可の明記あり" : "明記を確認できず"}
                 </span>
                 <h3 className="head text-lg text-ink">{SILO_LABELS[k]}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                  {v ?? "確認日時点で、公式サイト上にこのジャンルを買取対象とする記載を見つけられませんでした。持ち込み前に店舗へ直接確認してください。"}
+                  {v ?? note ?? "確認日時点で、公式サイト上にこのジャンルを買取対象とする記載を見つけられませんでした。持ち込み前に店舗へ直接確認してください。"}
                 </p>
               </div>
             );
