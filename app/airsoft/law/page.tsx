@@ -167,6 +167,36 @@ export default function AirsoftLawPage() {
               このため、該当するおそれのある個体を買取に出すという選択肢はありません。
             </p>
           </div>
+          <div className="card-field mt-8 max-w-3xl p-6">
+            <h3 className="head text-lg text-ink">3.5J/cm²はBB弾の威力にするとどのくらい？</h3>
+            <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+              業界団体の全日本トイガン安全協会（STGA）は、Q&Aで次のように案内しています。
+            </p>
+            <blockquote className="mt-3 text-sm leading-loose text-ink-soft">
+              「準空気銃となるエアガンの運動エネルギー値は 6mmBB弾で3.5J/平方cm（０.989J相当）以上 です。」
+              「室内の温度が20℃～35℃に於いて『6mmBB弾を使用した銃では弾の威力は0.989J以上のもの』『8mmBB弾を使用した銃では、弾の威力は1.649J以上のもの』が準空気銃に該当し、規制の対象となります。」
+            </blockquote>
+            <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+              同じQ&Aでは、威力の計算式を「エネルギーE(ジュール/J)＝ BB弾の重さ(ｇ) × 弾速[m/s]×弾速[m/s]÷2000」としています。
+              当サイトは測定を行っていないため、手元の個体が基準を超えるかどうかは、下の「判断に迷ったときの進め方」のとおり、購入経緯を確かめたうえで警察相談専用電話（#9110）などに確認してください。
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+              また同じQ&Aは、金属製のけん銃型エアガンについて「模造けん銃の規定においてモデルガンとエアガンの区別はされない」と注意しています。
+              模造けん銃の規定は<a href="/airsoft/model-gun/" className="font-bold text-safety underline">モデルガンが買取できない条件と模造拳銃の規制</a>で条文とあわせて整理しています。
+            </p>
+            <p className="mt-3 text-xs text-muted">
+              出典:{" "}
+              <a
+                href="https://www.stga-jp.com/qanda-airsoftgun"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-safety underline"
+              >
+                STGA・全日本トイガン安全協会「エアガン編」Q&amp;A（Q.4・Q.6・重要注意事項）
+              </a>
+              （2026年11月21日確認）
+            </p>
+          </div>
         </div>
       </section>
 
