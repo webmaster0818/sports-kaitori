@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SITE_URL, SITE_NAME } from "../lib/site";
 import Breadcrumbs from "../components/Breadcrumbs";
+import { REVIEWS } from "../lib/reviews";
 
 export const metadata: Metadata = {
   title: "エアガン・トイガン買取ガイド",
@@ -135,6 +136,37 @@ export default function AirsoftPage() {
               <p className="mt-3 text-sm leading-relaxed text-ink-soft">{s.body}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* 売り方（持ち込み・宅配・出張） */}
+      <section id="urikata" className="mx-auto max-w-6xl px-5 pb-14 md:pb-16">
+        <h2 className="head rule-safety text-2xl text-ink">持ち込み・宅配・出張：エアガンの買取を公式に明記している総合店</h2>
+        <p className="mt-5 max-w-3xl text-sm leading-relaxed text-ink-soft">
+          当サイトで検証した総合リユース店のうち、公式サイトでエアガン・電動ガン等の買取を明記している店舗です。
+          「買取方法」は各社が公式サイトで案内している方法で、会社全体の案内です。エアガンがすべての方法で受け付けられるとは限らないため、各社のページで条件を確認してください。
+        </p>
+        <div className="mt-6 overflow-x-auto">
+          <table className="w-full min-w-[640px] text-left text-sm">
+            <thead>
+              <tr className="border-b border-line text-ink">
+                <th className="py-2 pr-4">店舗</th>
+                <th className="py-2 pr-4">買取方法（公式の案内）</th>
+                <th className="py-2 pr-4">エアガンについての公式記載（要約）</th>
+              </tr>
+            </thead>
+            <tbody>
+              {REVIEWS.filter((r) => r.silos.airsoft).map((r) => (
+                <tr key={r.slug} className="border-b border-line align-top">
+                  <td className="py-3 pr-4 font-bold text-ink">
+                    <a href={`/reviews/${r.slug}/`} className="text-safety underline">{r.name}</a>
+                  </td>
+                  <td className="py-3 pr-4 text-ink-soft">{r.methods.join("・")}</td>
+                  <td className="py-3 pr-4 text-ink-soft">{r.silos.airsoft}（確認日 {r.confirmedAt}）</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </section>
 
