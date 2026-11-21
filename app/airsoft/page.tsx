@@ -143,7 +143,7 @@ export default function AirsoftPage() {
       <section id="urikata" className="mx-auto max-w-6xl px-5 pb-14 md:pb-16">
         <h2 className="head rule-safety text-2xl text-ink">持ち込み・宅配・出張：エアガンの買取を公式に明記している総合店</h2>
         <p className="mt-5 max-w-3xl text-sm leading-relaxed text-ink-soft">
-          当サイトで検証した総合リユース店のうち、公式サイトでエアガン・電動ガン等の買取を明記している店舗です。
+          当サイトが公式サイトで確認した総合リユース店のうち、公式サイトでエアガン・電動ガン等の買取を明記している店舗です。
           「買取方法」は各社が公式サイトで案内している方法で、会社全体の案内です。エアガンがすべての方法で受け付けられるとは限らないため、各社のページで条件を確認してください。
         </p>
         <div className="mt-6 overflow-x-auto">
